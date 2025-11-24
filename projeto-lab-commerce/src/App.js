@@ -7,10 +7,31 @@ import { useState } from "react";
 
 export default function App() {
     const [carrinho, setCarrinho] = useState([]);
+     const [ valorMin, setValorMin ] = useState(0);
+    const [ valorMax, setValorMax ] = useState(Infinity);
+
+    const handleValorMin = (event) => {
+        setValorMin(event.target.value);
+    }
+
+    const handleValorMax = (event) => {
+        setValorMax(event.target.value);
+    }
+
     return (
         <AppContainer>
-            <Filtro />
-            <Home carrinho={carrinho} setCarrinho={setCarrinho}/>
+            <Filtro 
+                valorMin={valorMin}
+                valorMax={valorMax}
+                handleValorMin={handleValorMin}
+                handleValorMax={handleValorMax}
+            />
+            <Home 
+            carrinho={carrinho}
+             setCarrinho={setCarrinho}
+             valorMin={valorMin}
+             valorMax={valorMax}
+            />
             <Carrinho />
 
         </AppContainer>
