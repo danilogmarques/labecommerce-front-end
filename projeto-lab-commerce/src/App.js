@@ -18,6 +18,16 @@ export default function App() {
         setValorMax(event.target.value);
     }
 
+     const adicionarPlanetaAoCarrinho = (planeta) => {
+
+        carrinho.find((item) => item.nome === planeta.nome);
+
+        setCarrinho([...carrinho, {...planeta, quantidade: 1}]) 
+    }
+        const removerPlanetaDoCarrinho = (planeta) => { 
+            carrinho.find((item) => item.nome === carrinho.nome)
+        }
+
     return (
         <AppContainer>
             <Filtro 
@@ -27,12 +37,16 @@ export default function App() {
                 handleValorMax={handleValorMax}
             />
             <Home 
-            carrinho={carrinho}
-             setCarrinho={setCarrinho}
-             valorMin={valorMin}
-             valorMax={valorMax}
+                carrinho={carrinho}
+                setCarrinho={setCarrinho}
+                valorMin={valorMin}
+                valorMax={valorMax}
+                adicionarPlanetaAoCarrinho={adicionarPlanetaAoCarrinho}
             />
-            <Carrinho />
+            <Carrinho 
+                carrinho={carrinho}
+                removerPlanetaDoCarrinho={removerPlanetaDoCarrinho}
+            />
 
         </AppContainer>
     );

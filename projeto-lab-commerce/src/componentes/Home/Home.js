@@ -1,16 +1,6 @@
 import planetas from "../../planetas.json";
 import { Imagem, PlanetasContainer } from "./style"
-console.log(planetas);
-const Home = ({ carrinho, setCarrinho, valorMin, valorMax  }) => {
-
-    const adicionarPlanetaAoCarrinho = (planeta) => {
-        const planetaExisteNoCarrinho = carrinho.find((item) => item.nome === planeta.nome);
-
-        console.log(planetaExisteNoCarrinho);
-
-        setCarrinho([...carrinho, {...planeta, quantidade: 1}])    
-    };
-    
+const Home = ({ valorMin, valorMax, adicionarPlanetaAoCarrinho  }) => {
 
     return(
         <PlanetasContainer>
@@ -20,7 +10,7 @@ const Home = ({ carrinho, setCarrinho, valorMin, valorMax  }) => {
                    <Imagem src={planeta.imagem} alt={planeta.nome} />
                    <p>Nome: {planeta.nome}</p>
                    <p>Preço: {planeta.valor}</p>
-                   <button onClick={() => adicionarPlanetaAoCarrinho(planeta)}>Comprar</button>
+                   <button onClick={() => adicionarPlanetaAoCarrinho(planeta)}>Adiconar ao Carrinho</button>
                </div>
                 return planeta.valor >= valorMin || valorMin === "" && planeta.valor <= valorMax || valorMax === "";
             
@@ -30,7 +20,7 @@ const Home = ({ carrinho, setCarrinho, valorMin, valorMax  }) => {
                    <Imagem src={planeta.imagem} alt={planeta.nome} />
                    <p>Nome: {planeta.nome}</p>
                    <p>Preço: {planeta.valor}</p>
-                   <button onClick={() => adicionarPlanetaAoCarrinho(planeta)}>Comprar</button>
+                   <button onClick={() => adicionarPlanetaAoCarrinho(planeta)}>Adiconar ao Carrinho</button>
                </div>
            ))}      
         </PlanetasContainer>

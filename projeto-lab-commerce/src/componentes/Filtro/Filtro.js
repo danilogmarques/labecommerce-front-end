@@ -4,17 +4,6 @@ import { ContainerFiltro } from "./style";
 
 const Filtro = ({ valorMin, valorMax, handleValorMin, handleValorMax }) => {
 
-    // const [ valorMin, setValorMin ] = useState(0);
-    // const [ valorMax, setValorMax ] = useState(Infinity);
-
-    // const handleValorMin = (event) => {
-    //     setValorMin(event.target.value);
-    // }
-
-    // const handleValorMax = (event) => {
-    //     setValorMax(event.target.value);
-    // }
-
     return (
         <ContainerFiltro>
             <label htmlFor="valorMin">Valor Mínimo</label>
