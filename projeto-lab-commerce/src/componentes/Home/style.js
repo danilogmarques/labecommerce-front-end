@@ -4,6 +4,8 @@ export const PlanetasContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    padding: 20px;
 `;
 
 export const Imagem = styled.img`

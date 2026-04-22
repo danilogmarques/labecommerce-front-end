@@ -24,8 +24,9 @@ export default function App() {
 
         setCarrinho([...carrinho, {...planeta, quantidade: 1}]) 
     }
-        const removerPlanetaDoCarrinho = (planeta) => { 
-            carrinho.find((item) => item.nome === carrinho.nome)
+        const removerPlanetaDoCarrinho = (item) => { 
+            const remove = carrinho.filter(carrinho => carrinho !== item)
+            setCarrinho(remove);
         }
 
     return (

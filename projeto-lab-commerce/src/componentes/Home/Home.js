@@ -22,7 +22,7 @@ const Home = ({ valorMin, valorMax, adicionarPlanetaAoCarrinho  }) => {
                    <p>Preço: {planeta.valor}</p>
                    <button onClick={() => adicionarPlanetaAoCarrinho(planeta)}>Adiconar ao Carrinho</button>
                </div>
-           ))}      
+           ))}
         </PlanetasContainer>
     )
 };
