@@ -1,7 +1,6 @@
 import { Imagem } from "../Home/style";
 
 const Carrinho = ({ carrinho, removerPlanetaDoCarrinho }) => {
-    console.log(carrinho);
     return (
         <div>
             {carrinho.map((item) => (

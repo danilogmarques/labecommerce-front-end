@@ -3,12 +3,14 @@ import Home from "./componentes/Home/Home";
 import Filtro from "./componentes/Filtro/Filtro";
 import { AppContainer } from "./style";
 import { useState } from "react";
+import { CardTitle } from "@chakra-ui/react";
 
 
 export default function App() {
     const [carrinho, setCarrinho] = useState([]);
-     const [ valorMin, setValorMin ] = useState(0);
+    const [ valorMin, setValorMin ] = useState(0);
     const [ valorMax, setValorMax ] = useState(Infinity);
+    const [ valorInicial, setValorInicial ] = useState(0);
 
     const handleValorMin = (event) => {
         setValorMin(event.target.value);
@@ -29,6 +31,13 @@ export default function App() {
             setCarrinho(remove);
         }
 
+        // console.log(carrinho[0].valor);
+        const resultSoma = ({carrinho}) => {
+            for (let i = 0; i < carrinho.length; i++)
+            setValorInicial(carrinho[i].valor);
+        };
+        console.log(valorInicial);
+           
     return (
         <AppContainer>
             <Filtro 
