@@ -4,15 +4,20 @@ import Card from "../Card/card";
 import CardContainer from "../Card/card";
 // 
 
-const Home = ({ valorMin, valorMax, adicionarPlanetaAoCarrinho  }) => {
+const Home = ({ valorMin, valorMax, adicionarPlanetaAoCarrinho }) => {
 
-    return(
+    return (
         <div>
-            {/* <NavBar /> */}
-            <CardContainer />
+            <CardContainer
+                valorMin={valorMin}
+                valorMax={valorMax}
+                adicionarPlanetaAoCarrinho={
+                    adicionarPlanetaAoCarrinho
+                }
+            />
 
         </div>
-    
+
     )
 };
 
