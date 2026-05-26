@@ -1,0 +1,57 @@
+import {
+  PlanetasContainer,
+  CardPlaneta,
+  Imagem,
+  Conteudo,
+  Nome,
+  Preco,
+  Botao
+} from "../../componentes/Card/style";
+
+const Carrinho = ({ carrinho, removerPlanetaDoCarrinho }) => {
+    if(!carrinho){
+       return (
+        <h1>Nenhhum Item no Carrinho</h1>
+       ) 
+    } else {
+    return (
+       <PlanetasContainer>
+   
+         {carrinho.map((planeta) => (
+           <CardPlaneta key={planeta.id}>
+   
+             <Imagem
+               src={planeta.imagem}
+               alt={planeta.nome}
+             />
+   
+             <Conteudo>
+   
+               <Nome>
+                 {planeta.nome}
+               </Nome>
+   
+               <Preco>
+                 R$ {planeta.valor}
+               </Preco>
+   
+               <Botao
+                 onClick={() =>
+                   removerPlanetaDoCarrinho(planeta)
+                 }
+               >
+                 Remover do Carrinho
+               </Botao>
+   
+             </Conteudo>
+   
+           </CardPlaneta>
+         ))}
+   
+       </PlanetasContainer>
+       
+     );
+    }
+   }    
+
+export default Carrinho;

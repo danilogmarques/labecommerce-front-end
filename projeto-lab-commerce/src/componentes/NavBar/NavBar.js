@@ -19,7 +19,11 @@ export default function NavBar() {
         <NavItem>
 
           <NavTrigger>
+
+            <Link to="/">
             Planetas
+            </Link>
+            
           </NavTrigger>
 
           <NavContent>

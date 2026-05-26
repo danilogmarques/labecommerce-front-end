@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  NavBar from "./componentes/NavBar/NavBar"
-import Carrinho from "./componentes/Carrinho/Carrinho";
+import Carrinho from "./pages/Carrinho/Carrinho";
 import Home from "./componentes/Home/Home";
 import { AppContainer } from "./style";
 import { useState } from "react";
@@ -61,7 +61,7 @@ export default function App() {
                             <Carrinho
                                 carrinho={carrinho}
                                 removerPlanetaDoCarrinho={
-                                    removerPlanetaDoCarrinho
+                                removerPlanetaDoCarrinho
                                 }
                             />
                         }
