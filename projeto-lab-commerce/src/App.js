@@ -3,7 +3,7 @@ import Home from "./componentes/Home/Home";
 import Filtro from "./componentes/Filtro/Filtro";
 import { AppContainer } from "./style";
 import { useState } from "react";
-import { CardTitle } from "@chakra-ui/react";
+import { Theme } from "@radix-ui/themes";
 
 
 export default function App() {
@@ -39,6 +39,7 @@ export default function App() {
         console.log(valorInicial);
            
     return (
+        <Theme>
         <AppContainer>
             <Filtro 
                 valorMin={valorMin}
@@ -59,5 +60,6 @@ export default function App() {
             />
 
         </AppContainer>
+        </Theme>
     );
 }
