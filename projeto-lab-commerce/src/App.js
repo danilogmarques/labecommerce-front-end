@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as Toast from "@radix-ui/react-toast";
 import  NavBar from "./componentes/NavBar/NavBar"
 import Carrinho from "./pages/Carrinho/Carrinho";
 import Home from "./componentes/Home/Home";
@@ -12,12 +13,21 @@ export default function App() {
     const [valorMin, setValorMin] = useState(0);
     const [valorMax, setValorMax] = useState(Infinity);
 
+    const [toastOpen, setToastOpen] = useState(false);
+    const [toastMensagem, setToastMensagem] = useState("");
+
     const adicionarPlanetaAoCarrinho = (planeta) => {
 
         setCarrinho([
             ...carrinho,
             { ...planeta, quantidade: 1 }
         ]);
+
+        setToastMensagem(
+      `${planeta.nome} adicionado ao carrinho 🚀`
+    );
+
+    setToastOpen(true);
     };
 
     const removerPlanetaDoCarrinho = (item) => {
@@ -29,48 +39,75 @@ export default function App() {
         setCarrinho(remove);
     };
 
-    return (
+   return (
 
-        <BrowserRouter>
+  <Toast.Provider swipeDirection="right">
 
+    <BrowserRouter>
 
-            <NavBar />
+      <NavBar />
 
-            <AppContainer>
+      <AppContainer>
 
-                <Routes>
+        <Routes>
 
-                    <Route
-                        path="/"
-                        element={
-                            <Home
-                                carrinho={carrinho}
-                                setCarrinho={setCarrinho}
-                                valorMin={valorMin}
-                                valorMax={valorMax}
-                                adicionarPlanetaAoCarrinho={
-                                    adicionarPlanetaAoCarrinho
-                                }
-                            />
-                        }
-                    />
+          <Route
+            path="/"
+            element={
+              <Home
+                carrinho={carrinho}
+                setCarrinho={setCarrinho}
+                valorMin={valorMin}
+                valorMax={valorMax}
+                adicionarPlanetaAoCarrinho={
+                  adicionarPlanetaAoCarrinho
+                }
+              />
+            }
+          />
 
-                    <Route
-                        path="/carrinho"
-                        element={
-                            <Carrinho
-                                carrinho={carrinho}
-                                removerPlanetaDoCarrinho={
-                                removerPlanetaDoCarrinho
-                                }
-                            />
-                        }
-                    />
+          <Route
+            path="/carrinho"
+            element={
+              <Carrinho
+                carrinho={carrinho}
+                removerPlanetaDoCarrinho={
+                  removerPlanetaDoCarrinho
+                }
+              />
+            }
+          />
 
-                </Routes>
+        </Routes>
 
-            </AppContainer>
+      </AppContainer>
 
-        </BrowserRouter>
-    );
-}
+    </BrowserRouter>
+
+    <Toast.Root
+      open={toastOpen}
+      onOpenChange={setToastOpen}
+      duration={3000}
+      style={{
+        background: "#111827",
+        color: "white",
+        padding: "16px 22px",
+        borderRadius: "14px",
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        fontWeight: "bold",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.4)"
+      }}
+    >
+
+      <Toast.Title>
+        {toastMensagem}
+      </Toast.Title>
+
+    </Toast.Root>
+
+    <Toast.Viewport />
+
+  </Toast.Provider>
+)};
