@@ -39,14 +39,14 @@ export default function App() {
         console.log(valorInicial);
            
     return (
-        <Theme>
+        // <Theme>
         <AppContainer>
-            <Filtro 
+            {/* <Filtro 
                 valorMin={valorMin}
                 valorMax={valorMax}
                 handleValorMin={handleValorMin}
                 handleValorMax={handleValorMax}
-            />
+            /> */}
             <Home 
                 carrinho={carrinho}
                 setCarrinho={setCarrinho}
@@ -54,12 +54,12 @@ export default function App() {
                 valorMax={valorMax}
                 adicionarPlanetaAoCarrinho={adicionarPlanetaAoCarrinho}
             />
-            <Carrinho 
+            {/* <Carrinho 
                 carrinho={carrinho}
                 removerPlanetaDoCarrinho={removerPlanetaDoCarrinho}
-            />
+            /> */}
 
         </AppContainer>
-        </Theme>
+        // </Theme>
     );
 }

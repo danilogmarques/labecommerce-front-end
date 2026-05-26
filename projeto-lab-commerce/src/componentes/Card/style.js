@@ -10,11 +10,13 @@ export const PlanetasContainer = styled.div`
   background:
     radial-gradient(circle at top, #1e1b4b, #060816 60%);
 
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
 `;
 
 export const CardPlaneta = styled.div`
   width: 260px;
+  height: 60vh;
 
   background: rgba(255, 255, 255, 0.06);
 
