@@ -1,22 +1,31 @@
 import styled from "styled-components";
 
 export const PlanetasContainer = styled.div`
+  /* padding-top: 40px; */
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px;
+  align-self: flex-start;
+  padding: 40px 24px;
+  margin: 50px;
+  /* top: auto; */
 
   background:
     radial-gradient(circle at top, #1e1b4b, #060816 60%);
 
-  height: 100%;
-  width: 100%;
+  
+  /* width: 100%; */
+  max-width: 1400px;
 `;
 
 export const CardPlaneta = styled.div`
+  /* padding-top: 40px; */
   width: 260px;
-  height: 60vh;
+
+  margin-top: 20px;
+
+  /* height: 60vh; */
 
   background: rgba(255, 255, 255, 0.06);
 

@@ -1,8 +1,25 @@
 import styled from "styled-components";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { Link } from "react-router-dom";
+
+export const NavLink = styled(Link)`
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #60a5fa;
+  }
+`;
 
 export const NavRoot = styled(NavigationMenu.Root)`
+
   width: 100%;
+  /* height: 72px; */
 
   display: flex;
   justify-content: center;
@@ -14,7 +31,7 @@ export const NavRoot = styled(NavigationMenu.Root)`
   backdrop-filter: blur(12px);
 
   position: sticky;
-  top: 0;
+  top: 0 ;
 
   z-index: 100;
 `;
@@ -95,4 +112,9 @@ export const NavContent = styled(NavigationMenu.Content)`
 
 export const NavViewport = styled(NavigationMenu.Viewport)`
   position: absolute;
+`;
+
+export const MeuLinkRouter = styled(Link)`
+  color: white; /* Altera a cor do texto para branco */
+  text-decoration: none;
 `;

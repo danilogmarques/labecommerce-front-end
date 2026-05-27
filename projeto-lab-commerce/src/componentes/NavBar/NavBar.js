@@ -1,5 +1,5 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { Link } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 import {
   NavRoot,
@@ -7,7 +7,8 @@ import {
   NavItem,
   NavTrigger,
   NavContent,
-  NavViewport,
+  NavViewport, 
+  NavLink,
 } from "./style";
 
 export default function NavBar() {
@@ -20,9 +21,9 @@ export default function NavBar() {
 
           <NavTrigger>
 
-            <Link to="/">
+            <NavLink to="/">
             Planetas
-            </Link>
+            </NavLink>
             
           </NavTrigger>
 
@@ -36,9 +37,9 @@ export default function NavBar() {
 
           <NavTrigger>
 
-            <Link to="/carrinho">
+            <NavLink to="/carrinho">
               Carrinho
-            </Link>
+            </NavLink>
 
           </NavTrigger>
 
@@ -51,7 +52,10 @@ export default function NavBar() {
         <NavItem>
 
           <NavTrigger>
-            Sobre
+            <NavLink to="/filtro">
+            Filtro
+            </NavLink>
+            
           </NavTrigger>
 
           <NavContent>

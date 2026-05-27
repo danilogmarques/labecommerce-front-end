@@ -6,6 +6,7 @@ const Filtro = ({ valorMin, valorMax, handleValorMin, handleValorMax }) => {
 
     return (
         <ContainerFiltro>
+            <h1>Filtro</h1>
             <label htmlFor="valorMin">Valor Mínimo</label>
             <input 
                 type="number"
