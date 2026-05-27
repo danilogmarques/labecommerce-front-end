@@ -14,8 +14,8 @@ export const Imagem = styled.img`
 `;
 
 export const Container = styled.div`
-    /* height: 100vh; */
-    /* width: 100vw; */
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

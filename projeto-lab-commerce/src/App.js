@@ -6,6 +6,7 @@ import Home from "./componentes/Home/Home";
 import { AppContainer } from "./style";
 import { useState } from "react";
 import Filtro from "./componentes/Filtro/Filtro";
+import { GlobalStyle } from "./styles/global";
 
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
   return (
 
     <Toast.Provider swipeDirection="right">
+      <GlobalStyle />
 
       <BrowserRouter>
       
