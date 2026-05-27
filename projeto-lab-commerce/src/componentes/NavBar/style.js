@@ -17,12 +17,13 @@ export const NavLink = styled(Link)`
 `;
 
 export const NavRoot = styled(NavigationMenu.Root)`
-
   width: 100%;
-  /* height: 72px; */
 
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
 
   padding: 20px;
 
@@ -31,9 +32,11 @@ export const NavRoot = styled(NavigationMenu.Root)`
   backdrop-filter: blur(12px);
 
   position: sticky;
-  top: 0 ;
+  top: 0;
 
   z-index: 100;
+
+  /* border-radius: 20px; */
 `;
 
 export const NavList = styled(NavigationMenu.List)`
@@ -52,6 +55,7 @@ export const NavItem = styled(NavigationMenu.Item)`
 `;
 
 export const NavTrigger = styled(NavigationMenu.Trigger)`
+
   background: transparent;
 
   border: none;
