@@ -12,3 +12,11 @@ export const Imagem = styled.img`
     width: 240px;
     height: 240px;
 `;
+
+export const Container = styled.div`
+    /* height: 100vh; */
+    /* width: 100vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`

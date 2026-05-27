@@ -6,7 +6,7 @@ import {
   Nome,
   Preco,
   Botao
-} from "../../componentes/Card/style";
+} from "../Card/style";
 
 const Carrinho = ({ carrinho, removerPlanetaDoCarrinho }) => {
     if(!carrinho){

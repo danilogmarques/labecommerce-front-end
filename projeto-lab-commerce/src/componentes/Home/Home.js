@@ -1,5 +1,5 @@
 import planetas from "../../planetas.json";
-import { Imagem, PlanetasContainer } from "./style"
+import { Container, Imagem, PlanetasContainer } from "./style"
 import Card from "../Card/card";
 import CardContainer from "../Card/card";
 // 
@@ -7,7 +7,7 @@ import CardContainer from "../Card/card";
 const Home = ({ valorMin, valorMax, adicionarPlanetaAoCarrinho }) => {
 
     return (
-        <div>
+        <Container>
             <CardContainer
                 valorMin={valorMin}
                 valorMax={valorMax}
@@ -16,7 +16,7 @@ const Home = ({ valorMin, valorMax, adicionarPlanetaAoCarrinho }) => {
                 }
             />
 
-        </div>
+        </Container>
 
     )
 };
