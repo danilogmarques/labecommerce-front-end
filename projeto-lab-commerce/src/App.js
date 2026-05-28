@@ -12,8 +12,8 @@ import { GlobalStyle } from "./styles/global";
 export default function App() {
 
   const [carrinho, setCarrinho] = useState([]);
-  const [valorMin, setValorMin] = useState(0);
-  const [valorMax, setValorMax] = useState(Infinity);
+  const [valorMin, setValorMin] = useState("");
+  const [valorMax, setValorMax] = useState("");
 
   const [toastOpen, setToastOpen] = useState(false);
   const [toastMensagem, setToastMensagem] = useState("");
@@ -38,8 +38,11 @@ export default function App() {
       carrinho => carrinho !== item
     );
 
+
     setCarrinho(remove);
   };
+
+  
 
   return (
 

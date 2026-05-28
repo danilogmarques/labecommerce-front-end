@@ -1,9 +1,25 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { ContainerFiltro } from "./style";
-// import planetas from "../../planetas.json";
+import planetas from "../../planetas.json";
 
-const Filtro = ({ valorMin, valorMax, handleValorMin, handleValorMax }) => {
+const Filtro = ({ 
+    valorMin, valorMax, setValorMin, setValorMax, planetasFiltrados}) => {
 
+         const handleChangeMin = (e) => {
+        const valor = e.target.value;
+        if (valor === "" || Number(valor) >= 0) {
+            setValorMin(valor);
+        }
+    };
+
+    const handleChangeMax = (e) => {
+        const valor = e.target.value;
+        if (valor === "" || Number(valor) >= 0) {
+            setValorMax(valor);
+            }}
+
+   
+    
     return (
         <ContainerFiltro>
             <h1>Filtro</h1>
@@ -12,14 +28,14 @@ const Filtro = ({ valorMin, valorMax, handleValorMin, handleValorMax }) => {
                 type="number"
                 id="valorMin"
                 value={valorMin}
-                onChange={handleValorMin}
+                onChange={handleChangeMin}
             />
             <label htmlFor="valorMax">Valor Máximo</label>
             <input 
                 type="number"
                 id="valorMax"
                 value={valorMax}
-                onChange={handleValorMax}
+                onChange={handleChangeMax}
             />
         </ContainerFiltro>
     )

@@ -9,7 +9,7 @@ import {
 } from "../Card/style";
 
 const Carrinho = ({ carrinho, removerPlanetaDoCarrinho }) => {
-    if(!carrinho){
+    if(!carrinho || carrinho.length === 0){
        return (
         <h1>Nenhhum Item no Carrinho</h1>
        ) 
