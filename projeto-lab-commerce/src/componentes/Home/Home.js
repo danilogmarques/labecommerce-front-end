@@ -1,6 +1,4 @@
-import planetas from "../../planetas.json";
-import { Container, Imagem, PlanetasContainer } from "./style"
-import Card from "../Card/card";
+import { Container } from "./style"
 import CardContainer from "../Card/card";
 // 
 

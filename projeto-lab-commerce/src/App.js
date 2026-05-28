@@ -7,6 +7,7 @@ import { AppContainer } from "./style";
 import { useState } from "react";
 import Filtro from "./componentes/Filtro/Filtro";
 import { GlobalStyle } from "./styles/global";
+import Formulario from "./componentes/Formulario/Formulario";
 
 
 export default function App() {
@@ -94,6 +95,10 @@ export default function App() {
               }
             />
             <Route
+            path="/formulario"
+            element={
+              <Formulario />
+            }
             />
           </Routes>
 
