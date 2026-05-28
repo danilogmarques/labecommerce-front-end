@@ -4,21 +4,39 @@ import {
   Input,
   Button
 } from "./style";
+import { useForm } from "react-hook-form"
+import { formularioSchema } from "../../schemas/formularioSchema"
+import { zodResolver } from "@hookform/resolvers/zod";
 
-export default function Formulario() {
+
+
+export default function Formulario() { const { 
+        register, 
+        handleSubmit,
+        formState: { errors },
+     } = useForm({
+        resolver: zodResolver(formularioSchema),
+    });
+
+
+    function onSubmit( data ){
+        console.log("submt", data)
+    }
+            
   return (
     <Container>
       <Form.Root
-        onSubmit={(e) => {
-          e.preventDefault();
-          alert("Formulário enviado!");
-        }}
+      id="formulario"
+        onSubmit={handleSubmit(onSubmit)}
       >
         <Form.Field name="nome">
           <Form.Label>Nome</Form.Label>
 
           <Form.Control asChild>
-            <Input type="text" placeholder="Digite seu nome" required />
+            <Input 
+                type="text"
+                placeholder="Digite seu nome"
+                {...register("nome")}/>
           </Form.Control>
         </Form.Field>
 
@@ -29,7 +47,7 @@ export default function Formulario() {
             <Input
               type="email"
               placeholder="Digite seu email"
-              required
+              {...register("email")}
             />
           </Form.Control>
         </Form.Field>
