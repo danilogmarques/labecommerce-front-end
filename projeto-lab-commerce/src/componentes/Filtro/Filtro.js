@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { ContainerFiltro } from "./style";
-import planetas from "../../planetas.json";
 
 const Filtro = ({ 
     valorMin, valorMax, setValorMin, setValorMax, planetasFiltrados}) => {

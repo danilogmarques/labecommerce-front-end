@@ -1,6 +1,3 @@
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-// import { NavLink } from "react-router-dom";
-
 import {
   NavRoot,
   NavList,
@@ -52,8 +49,8 @@ export default function NavBar() {
         <NavItem>
 
           <NavTrigger>
-            <NavLink to="/filtro">
-            Filtro
+            <NavLink to="/formulario">
+            Formulário
             </NavLink>
             
           </NavTrigger>
