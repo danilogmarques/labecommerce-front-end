@@ -52,9 +52,33 @@ export default function Formulario() { const {
           </Form.Control>
         </Form.Field>
 
+          <Form.Field name="senha">
+          <Form.Label>Senha</Form.Label>
+
+          <Form.Control asChild>
+            <Input
+              type="senha"
+              placeholder="Digite digite a sua senha"
+              {...register("senha")}
+            />
+          </Form.Control>
+        </Form.Field>
+
+         <Form.Field name="repetir senha">
+          <Form.Label>Repetir Senha</Form.Label>
+
+          <Form.Control asChild>
+            <Input
+              type="senha"
+              placeholder="Repita a sua senha"
+              {...register("senha")}
+            />
+          </Form.Control>
+        </Form.Field>
+        
         <Form.Submit asChild>
           <Button type="submit">
-            Enviar
+            Criar Conta
           </Button>
         </Form.Submit>
       </Form.Root>

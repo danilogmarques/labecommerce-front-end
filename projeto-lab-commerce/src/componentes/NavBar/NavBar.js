@@ -1,3 +1,4 @@
+import MenuMobile from "../MenuMobile/MenuMobile";
 import {
   NavRoot,
   NavList,
@@ -11,6 +12,8 @@ import {
 export default function NavBar() {
   return (
     <NavRoot>
+
+      <MenuMobile />
 
       <NavList>
 
